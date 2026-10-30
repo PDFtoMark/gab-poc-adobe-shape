@@ -1,0 +1,9 @@
+name: control local
+on:
+  push:
+    branches: [main]
+jobs:
+  control:
+    uses: ./.github/workflows/local-callee.yml
+    with:
+      debug: true
