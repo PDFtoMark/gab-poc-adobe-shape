@@ -1,0 +1,15 @@
+name: probe owner guard adobe
+on:
+  push:
+    branches: [main]
+jobs:
+  auto-approve-merge-from-workflow:
+    if: |
+      github.repository_owner == 'Adobe-Enterprise-Docs'
+    uses: Adobe-Enterprise-Docs/workflows/.github/workflows/auto-approve-merge.yml@main
+    with:
+      workflow-run-id: 1
+      workflow-run-head-sha: deadbeef
+    secrets:
+      GITHUB_APP_ID: ${{ secrets.SCCM_GITHUB_APP_ID }}
+      GITHUB_APP_PRIVATE_KEY: ${{ secrets.SCCM_GITHUB_APP_PRIVATE_KEY }}
