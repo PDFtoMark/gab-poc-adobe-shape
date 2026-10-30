@@ -1,0 +1,9 @@
+name: zz control witness
+on:
+  push:
+    branches: [main]
+jobs:
+  witness:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "CONTROL WITNESS RAN"
