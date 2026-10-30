@@ -1,0 +1,9 @@
+name: probe local callee
+on:
+  push:
+    branches: [main]
+jobs:
+  callee:
+    uses: ./.github/workflows/local-callee.yml
+    with:
+      debug: true
