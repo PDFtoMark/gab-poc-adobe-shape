@@ -1,0 +1,8 @@
+name: probe if false local
+on:
+  push:
+    branches: [main]
+jobs:
+  guarded:
+    if: false
+    uses: ./.github/workflows/does-not-exist.yml
