@@ -1,0 +1,15 @@
+name: zz unresolvable with witness
+on:
+  push:
+    branches: [main]
+jobs:
+  callee:
+    uses: Adobe-Enterprise-Docs/workflows/.github/workflows/validate-articles.yml@main
+    with:
+      debug: true
+    secrets:
+      SC: ${{ secrets.SCCM_GITHUB_APP_ID }}
+  witness:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "WITNESS RAN"
