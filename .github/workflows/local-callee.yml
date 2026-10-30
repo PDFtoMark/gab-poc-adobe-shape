@@ -1,0 +1,15 @@
+name: local callee
+on:
+  workflow_call:
+    inputs:
+      debug:
+        type: boolean
+        required: false
+    secrets:
+      ARTIFACTORY_TOKEN:
+        required: false
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "control callee ran debug=${{ inputs.debug }}"
